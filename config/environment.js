@@ -45,6 +45,24 @@ module.exports = function(environment) {
   if (environment === 'production') {
 
   }
+  
+  /* PPARA FACEBOOK AUTH*/
+  ENV.FB = {
+    appId: process.env.FACEBOOK_DEV_CLIENT_ID,
+    version: 'v2.7',
+    xfbml: true
+  }
+
+  ENV.contentSecurityPolicy = {
+    'default-src': "'none'",
+    'script-src': "'self' 'unsafe-eval' http://example.com:35729 https://connect.facebook.net http://connect.facebook.net https://graph.facebook.com",
+    'font-src': "'self'",
+    'connect-src': "'self' ws://example.com:35729",
+    'img-src': "'self' https://www.facebook.com",
+    'style-src': "'self' 'unsafe-inline'",
+    'media-src': "'self'",
+    'frame-src': "http://static.ak.facebook.com http://staticxx.facebook.com https://s-static.ak.facebook.com https://www.facebook.com http://www.facebook.com"
+  }
 
   return ENV;
 };
